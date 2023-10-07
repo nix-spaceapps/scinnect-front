@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { SignInRoutingModule } from './sign-in-routing.module';
 import { SignInComponent } from './sign-in.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
 
 
 @NgModule({
@@ -10,8 +12,11 @@ import { SignInComponent } from './sign-in.component';
     SignInComponent
   ],
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
     CommonModule,
-    SignInRoutingModule
+    SignInRoutingModule,
+    ToastModule
   ]
 })
 export class SignInModule { }

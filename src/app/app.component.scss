@@ -1,0 +1,7 @@
+:host {
+    ::ng-deep {
+        input.ng-touched.ng-invalid {
+            @apply border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-100 focus:border-red-100 block w-full p-2.5 dark:border-red-400
+        }
+    }
+}

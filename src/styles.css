@@ -18,3 +18,5 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('./assets/css/cookie-though.css');
