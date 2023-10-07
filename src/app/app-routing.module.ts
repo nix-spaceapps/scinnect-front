@@ -5,7 +5,8 @@ import { AuthenticatedGuard } from './auth/guard/auth-guard.guard';
 const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule ) },
   { path: 'user', canActivate: [], loadChildren: () => import('./user/user.module').then(m => m.UserModule ) },
-  { path: 'project', canActivate: [AuthenticatedGuard], loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule ) }
+  { path: 'project', canActivate: [AuthenticatedGuard], loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule ) },
+  { path: '**', redirectTo: '/auth/sign-in' }
 ];
 
 @NgModule({

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// @ts-ignore
+import particlesJS from 'particles.js';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class SignInComponent {
 
+  ngAfterViewInit() {
+    (window as any).launchParticlesJS('particles-js');
+  }
 }

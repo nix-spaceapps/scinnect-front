@@ -3,9 +3,9 @@ var bar1 = document.querySelector("[bar1]");
 var bar2 = document.querySelector("[bar2]");
 var bar3 = document.querySelector("[bar3]");
 var navbar_sign_in_up = document.querySelector("[navbar-menu]");
-const collapse_height = navbar_sign_in_up.scrollHeight;
+const collapse_height = navbar_sign_in_up && navbar_sign_in_up.scrollHeight;
 
-expand_trigger.addEventListener("click", function () {
+expand_trigger && expand_trigger.addEventListener("click", function () {
   elements = navbar_sign_in_up.querySelectorAll("a");
   if (navbar_sign_in_up.classList.contains("lg-max:max-h-0")) {
     navbar_sign_in_up.classList.remove("lg-max:max-h-0");

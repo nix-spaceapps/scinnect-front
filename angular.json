@@ -38,7 +38,7 @@
               "src/assets/css/soft-ui-dashboard-tailwind.min.css",
               "src/assets/css/tooltips.css"
             ],
-            "scripts": [              
+            "scripts": [
               "src/assets/js/chart-1.js",
               "src/assets/js/chart-2.js",
               "src/assets/js/dropdown.js",
@@ -50,6 +50,9 @@
               "src/assets/js/sidenav-burger.js",
               "src/assets/js/soft-ui-dashboard-tailwind.js",
               "src/assets/js/tooltips.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "cookie-though"
             ]
           },
           "configurations": {
