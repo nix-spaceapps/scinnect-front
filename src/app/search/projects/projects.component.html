@@ -55,7 +55,7 @@
                                     <div class="flex items-center justify-center">
                                         <span class="mr-2 text-xs font-semibold leading-tight">{{project.percent}}%</span>
                                         <div>
-                                            <div [style.height.%]="project.percent"
+                                            <div [style.width.%]="[project.percent]"
                                                 class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
                                                 <div class="duration-600 ease-soft bg-gradient-to-tl from-blue-600 to-cyan-400 -mt-0.38 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-fuchsia-500 text-center text-white transition-all"
                                                     role="progressbar" [attr.aria-valuenow]="30" aria-valuemin="0"
