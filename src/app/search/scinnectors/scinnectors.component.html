@@ -29,7 +29,7 @@
                             <tr *ngIf="scinnectors?.length === 0">
                                 <td colspan="4" class="text-center p-4">No matches found for your search. Feel free to find scinnectors by names, tags or bio.</td>
                             </tr>
-                            <tr *ngFor="let scinnector of scinnectors">
+                            <tr *ngFor="let scinnector of scinnectors; let index = index">
                                 <td
                                     class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                     <div class="flex px-2 py-1">
@@ -40,15 +40,15 @@
                                         </div>
                                         <div class="flex flex-col justify-center">
                                             <h6 class="mb-0 text-sm leading-normal">{{ scinnector.name }}</h6>
-                                            <p class="mb-0 text-xs leading-tight text-slate-400">{{scinnector.bio}}
+                                            <p class="mb-0 text-xs leading-tight text-slate-400">{{scinnector.user.usermame }}
                                             </p>
                                         </div>
                                     </div>
                                 </td>
                                 <td
                                     class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                    <p class="mb-0 text-xs font-semibold leading-tight">{{scinnector.user.username}}</p>
-                                    <p class="mb-0 text-xs leading-tight text-slate-400">Organization</p>
+                                    <p class="mb-0 text-xs font-semibold leading-tight">{{ jobs![index] }}</p>
+                                    <p class="mb-0 text-xs leading-tight text-slate-400">Current</p>
                                 </td>
                                 <td
                                     class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">

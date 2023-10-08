@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { filter } from 'rxjs';
-import { Project, Scinnector } from 'src/model/scinnector';
+import { Scinnector } from 'src/model/scinnector';
 import { UserService } from 'src/services/user.service';
+import { faker } from '@faker-js/faker'
 
 @Component({
   selector: 'app-scinnectors',
@@ -12,6 +13,8 @@ import { UserService } from 'src/services/user.service';
 })
 export class ScinnectorsComponent {
 
+  jobs?: string[] = [];
+
   @Input() control?: AbstractControl | null;
   scinnectors?: Array<Scinnector> = [];
 
@@ -20,6 +23,8 @@ export class ScinnectorsComponent {
   ) { }
 
   ngOnInit() {
+    this.jobs  = Array(1000).map(e => e = faker.person.jobArea());
+    console.log(this.jobs)
     this.control?.valueChanges.pipe(filter(e => this.filter(e))).subscribe((k) => this.find(k))
   }
 
