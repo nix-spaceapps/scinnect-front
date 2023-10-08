@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxInputTagComponent } from '@ngx-lite/input-tag';
 import { Project } from 'src/model/scinnector';
 import { AuthService } from 'src/services/auth.service';
 import { ProjectService } from 'src/services/project.service';
@@ -12,6 +13,8 @@ import { ProjectService } from 'src/services/project.service';
   providers: [ProjectService]
 })
 export class CreateComponent {
+
+  @ViewChild(NgxInputTagComponent) tag?: ElementRef<NgxInputTagComponent>;
 
   get loading() {
     return this._projectService.loading;
@@ -31,6 +34,9 @@ export class CreateComponent {
 
   ngOnInit() {
     this.formGroup.valueChanges.subscribe(console.log)
+  }
+
+  ngAfterViewInit() {
   }
 
   create() { 

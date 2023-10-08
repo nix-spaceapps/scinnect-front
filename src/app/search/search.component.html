@@ -13,9 +13,8 @@
           </li>
           <li
             class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']"
-            aria-current="page">Tables</li>
+            aria-current="page">Search</li>
         </ol>
-        <h6 class="mb-0 font-bold capitalize">Search</h6>
       </nav>
     </div>
   </nav>
@@ -28,9 +27,9 @@
 
   <div class="w-full px-6 py-6 mx-auto">
     <!-- table 1 -->
-    <app-scinnectors></app-scinnectors>
+    <app-scinnectors [control]="formGroup.get('keyword')"></app-scinnectors>
     <!-- card 2 -->
-    <app-projects></app-projects>
+    <app-projects [control]="formGroup.get('keyword')"></app-projects>
 
     <footer>
       <div class="container flex">

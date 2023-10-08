@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable, finalize } from "rxjs";
+import { Pageable } from "src/model/pageable";
 import { Scinnector } from "src/model/scinnector";
 
 @Injectable({
@@ -20,6 +21,11 @@ export class UserService {
   getScinnector(id: string): Observable<Scinnector> {
     this.loading.next(true);
     return this._httpClient.get<Scinnector>(`${this.baseUrl}/scinnectors/${id}`, {withCredentials: true}).pipe(finalize(() => { this._loading.next(false) }));
+  }
+
+  find(keyword: string): Observable<Pageable<Scinnector>> {
+    this.loading.next(true);
+    return this._httpClient.get<Pageable<Scinnector>>(`${this.baseUrl}/scinnectors?keyword=${keyword}`, { withCredentials: true }).pipe(finalize(() => { this._loading.next(false) }));
   }
 
 }
