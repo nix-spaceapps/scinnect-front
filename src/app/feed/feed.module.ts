@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { FeedRoutingModule } from './feed-routing.module';
 import { FeedComponent } from './feed.component';
 import { SharedModule } from '../shared/shared.module';
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
   declarations: [
-    FeedComponent
+    FeedComponent,
+    PostComponent
   ],
   imports: [
     CommonModule,
