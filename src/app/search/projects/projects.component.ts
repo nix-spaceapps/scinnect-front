@@ -15,7 +15,7 @@ export class ProjectsComponent {
   @Input() control?: AbstractControl | null;
   projects?: Array<Project> = [];
 
-  percent: number = (() => Math.floor(Math.random() * 101))();
+  percent: number = 0;
 
   constructor(
     private _projectService: ProjectService
@@ -27,7 +27,13 @@ export class ProjectsComponent {
 
   find(k: string) {
     this._projectService.find(k).subscribe(e => {
-      this.projects = e.content;
+      this.projects = e.content.map(e => {
+        e.percent = this.getPercent(0, 100);
+        console.log(e.percent)
+        return e;
+      });
+
+      console.log(this.projects)
     })
   }
 
@@ -35,6 +41,10 @@ export class ProjectsComponent {
     if(!e || e.length === 0) this.projects = []
 
     return e && e.length > 3;
+  }
+
+  getPercent(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
 

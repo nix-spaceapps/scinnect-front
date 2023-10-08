@@ -3,13 +3,9 @@
     class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen bg-gray-50 transition-all duration-200 min-v-screen">
 
     <section class="min-h-screen p-4 flex flex-col items-center justify-center w-full space-y-4">
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
+        <ng-container *ngFor="let post of feed">
+            <app-post [post]="post"></app-post>
+        </ng-container>
     </section>
 
     <footer>

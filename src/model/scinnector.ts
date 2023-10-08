@@ -15,4 +15,5 @@ export type Project = {
   description: string
   image: string
   tags: any
+  percent: number
 }
