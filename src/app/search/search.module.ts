@@ -5,11 +5,15 @@ import { SearchRoutingModule } from './search-routing.module';
 import { SearchComponent } from './search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { ScinnectorsComponent } from './scinnectors/scinnectors.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 
 @NgModule({
   declarations: [
-    SearchComponent
+    SearchComponent,
+    ScinnectorsComponent,
+    ProjectsComponent
   ],
   imports: [
     CommonModule,
