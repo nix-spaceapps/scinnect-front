@@ -8,6 +8,18 @@ import { Post } from 'src/model/feed';
 })
 export class PostComponent {
 
+  static index: number = 1;
+
+  bgImage: string = `https://i.pravatar.cc/32?img=${PostComponent.index}`;
+
+  get index() {
+    return PostComponent.index;
+  }
+
   @Input() post?: Post;
+
+  constructor() {
+    PostComponent.index++;
+  }
 
 }
