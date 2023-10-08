@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from 'src/model/user';
 import { AuthService } from 'src/services/auth.service';
 
 @Component({
@@ -7,6 +8,10 @@ import { AuthService } from 'src/services/auth.service';
   styleUrls: ['./aside.component.scss']
 })
 export class AsideComponent {
+  
+  get session(): User | undefined {
+    return this._authService.session.value;
+  }
 
   constructor(
     private _authService: AuthService

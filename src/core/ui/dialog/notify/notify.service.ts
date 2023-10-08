@@ -7,7 +7,7 @@ import { exclamation } from "./icons";
 export class NotifyService {
 
     private _notyf = new Notyf({
-        duration: 155000,
+        duration: 3000,
         types: [
             {
                 type: 'info',

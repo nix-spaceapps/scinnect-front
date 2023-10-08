@@ -1,0 +1,20 @@
+:host {
+
+    a.active {
+        @apply shadow-soft-xl font-semibold;
+
+        >div {
+            @apply bg-gradient-to-tl from-blue-600 to-cyan-400;
+        }
+
+        i {
+            @apply text-white
+        }
+    }
+
+    a:not(.active) {
+        i {
+            @apply text-slate-800
+        }
+    }
+}
