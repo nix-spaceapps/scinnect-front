@@ -1,1 +1,91 @@
-<p>create works!</p>
+<app-aside></app-aside>
+<div
+    class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen bg-gray-50 transition-all duration-200 min-v-screen">
+
+    <section class="min-h-screen ">
+        <div class="relative flex items-start pt-12 pb-56 m-4 overflow-hidden bg-center bg-cover min-h-50-screen rounded-xl"
+            style="background-image: url('../assets/img/curved-images/environmental-conservation-garden-children.jpg')">
+            <div class="absolute h-full w-full z-10 top-0 opacity-50" id="particles-js">
+                <canvas class="h-full w-full"></canvas>
+            </div>
+            <span
+                class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-900 to-slate-800 opacity-60"></span>
+            <div class="container z-10">
+                <div class="flex flex-wrap justify-center -mx-3">
+                    <div class="w-full max-w-full px-3 mx-auto mt-0 text-center lg:flex-0 shrink-0 lg:w-5/12">
+                        <h1 class="mt-12 mb-2 text-white">Start a new project!</h1>
+                        <p class="text-white">Embark on a new project adventure, creating opportunities and innovations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container absolute m-auto left-0 right-0 z-20">
+            <div class="flex flex-wrap -mx-3 -mt-48 md:-mt-56 lg:-mt-48">
+                <div class="w-full max-w-full px-3 mx-auto mt-0 md:flex-0 shrink-0 md:w-7/12 lg:w-5/12 xl:w-4/12">
+                    <div
+                        class="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
+                        <div class="absolute z-10 bg-white/50 w-full h-full flex items-center justify-center"  *ngIf="(loading | async)">
+                            <div role="status">
+                                <svg aria-hidden="true" class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="flex-auto p-6 relative">
+                            <form role="form text-left" [formGroup]="formGroup">
+                                <div class="mb-4">
+                                    <input type="text" formControlName="name"
+                                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                        placeholder="Name" aria-label="Name" aria-describedby="name-addon" />
+                                </div>
+                                <div class="mb-4">
+                                    <textarea formControlName="description" placeholder="Give your project a description"
+                                    class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+
+                                    </textarea>
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" formControlName="image"
+                                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                                        placeholder="Url Image" aria-label="Email" aria-describedby="email-addon" />
+                                </div>
+                                <ngx-input-tag formControlName="tags"></ngx-input-tag>
+                                <div class="text-center">
+                                    <button (click)="create()"
+                                        class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-900 to-slate-800 hover:border-slate-700 hover:bg-slate-700 hover:text-white">
+                                        Let's Get Going!
+                                </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>   
+
+    <footer>
+        <div class="container flex">
+            <div class="flex flex-1 -mx-3  text-sm">
+                <div class="flex-shrink-0 w-full max-w-full mx-auto mt-6 text-center lg:flex-0 lg:w-8/12">
+                    <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> A
+                        Scinnect </a>
+                    <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Team </a>
+                    <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Services
+                    </a>
+                    <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Blog </a>
+                </div>
+            </div>
+            <div class="flex flex-1  -mx-3">
+                <div class="w-8/12 max-w-full text-sm px-3 mx-auto mt-6 text-center flex-0">
+                    <p class="mb-0 text-slate-400  text-sm">
+                        Copyright ©
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                        by <strong>Scinnect</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

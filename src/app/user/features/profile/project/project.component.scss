@@ -1,0 +1,7 @@
+:host {
+    @apply mt-10 w-full max-w-full px-3 mb-6 md:w-6/12 md:flex-none xl:mb-0 xl:w-3/12;
+
+    .avatar {
+        @apply relative z-20 inline-flex items-center justify-center w-6 h-6 text-white transition-all duration-200 border-2 border-white border-solid ease-soft-in-out text-xs rounded-circle hover:z-30;
+    }
+}

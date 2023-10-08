@@ -19,7 +19,7 @@
                             class="relative flex flex-col min-w-0 mt-32 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border">
                             <div class="p-6 pb-0 mb-0 bg-transparent border-b-0 rounded-t-2xl">
                                 <h3
-                                    class="relative z-10 font-bold text-transparent bg-gradient-to-tl from-blue-600 to-cyan-400 bg-clip-text">
+                                    class="relative z-10 font-bold text-transparent bg-gradient-to-tl from-gray-900 to-slate-300 bg-clip-text">
                                     Welcome back</h3>
                                 <p class="mb-0">Authenticate with your social networks</p>
                             </div>                            
@@ -31,7 +31,7 @@
                             </div>
                             <div class="p-6 pb-0 mb-0 space-y-4">
                                 <button routerLink="/user/edgardhsl"
-                                    class="w-full group h-12 px-6 border border-gray-300 rounded-full transition duration-300 hover:opacity-0 hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                                    class="w-full group h-12 px-6 border border-gray-300 rounded-full transition duration-300 hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
                                     <div class="relative flex items-center space-x-4 justify-center">
                                         <img src="https://www.svgrepo.com/show/475656/google-color.svg"
                                             class="absolute left-0 w-5" alt="google logo">
@@ -86,7 +86,7 @@
                                 </button>
                             </div>
                             <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700">
-                            <div class="flex-auto pb-6 relative">
+                            <div class="flex-auto p-6 relative">
                                 <form role="form text-left" [formGroup]="formGroup">
                                     <div class="mb-4">
                                         <input type="email" formControlName="email"
@@ -100,7 +100,7 @@
                                             aria-describedby="password-addon" />
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" (click)="login()"
+                                        <button (click)="login()"
                                             class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-900 to-slate-800 hover:border-slate-700 hover:bg-slate-700 hover:text-white">Sign
                                             in</button>
                                     </div>
@@ -113,7 +113,7 @@
                             <p class="mx-auto mb-6 leading-normal text-sm">
                                 Don't have an account?
                                 <a routerLink="../sign-up"
-                                    class="relative z-10 font-semibold text-transparent bg-gradient-to-tl from-blue-600 to-cyan-400 bg-clip-text">Sign
+                                    class="relative z-10 font-semibold text-transparent bg-gradient-to-tl from-gray-900 to-slate-300 bg-clip-text">Sign
                                     up</a>
                             </p>
                         </div>
@@ -145,23 +145,6 @@
                 <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Team </a>
                 <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Services </a>
                 <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Blog </a>
-            </div>
-            <div class="flex-shrink-0 w-full max-w-full mx-auto mt-2 mb-6 text-center lg:flex-0 lg:w-8/12">
-                <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
-                    <span class="text-lg fab fa-dribbble"></span>
-                </a>
-                <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
-                    <span class="text-lg fab fa-twitter"></span>
-                </a>
-                <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
-                    <span class="text-lg fab fa-instagram"></span>
-                </a>
-                <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
-                    <span class="text-lg fab fa-pinterest"></span>
-                </a>
-                <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
-                    <span class="text-lg fab fa-github"></span>
-                </a>
             </div>
         </div>
         <div class="flex flex-wrap -mx-3">

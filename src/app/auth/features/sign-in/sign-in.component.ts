@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
 import { AuthService } from 'src/services/auth.service';
+import { NotifyService } from 'src/core/ui/dialog/notify/notify.service';
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss'],
-  providers: [MessageService]
+  providers: [NotifyService]
 })
 export class SignInComponent {
   
@@ -23,16 +23,20 @@ export class SignInComponent {
 
   constructor(
     private _authService: AuthService,
-    private _messageService: MessageService,
-    private _router: Router,
+    private _notifyService: NotifyService
   ) {}
 
   ngAfterViewInit() {
-    (window as any).launchParticlesJS('particles-js');
+    (window as any).launchParticlesJS('particles-js');    
   }
 
   login() {
-    this._authService.authenticate(this.formGroup.value).subscribe(() => this.reloadCurrentRoute());
+    this._authService.authenticate(this.formGroup.value).subscribe(() => this.reloadCurrentRoute(), () => {
+      this._notifyService.error({
+        position: {x: 'center', y: 'bottom'},
+        message: 'Usuário/senha incorretos.'
+      });
+    });
   }
 
   reloadCurrentRoute() {

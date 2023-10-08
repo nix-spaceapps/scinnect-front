@@ -1,0 +1,10 @@
+:host {
+    ::ng-deep {
+        .ngx-input-tag {
+            @apply rounded-lg overflow-hidden;
+            button {
+                @apply min-h-[112%] -top-1
+            }
+        }
+    }
+}

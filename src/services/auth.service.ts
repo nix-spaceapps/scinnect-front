@@ -9,7 +9,7 @@ import { User } from 'src/model/user';
 })
 export class AuthService {
 
-  private baseUrl: string = 'https://scinnect-api-ff2c1a72d966.herokuapp.com'
+  private baseUrl: string = 'https://api.scinnect.tech';
   private _session: BehaviorSubject<User | undefined> = new BehaviorSubject<User | undefined>(undefined);
   get session(): BehaviorSubject<User | undefined> {
     return this._session;
@@ -22,10 +22,8 @@ export class AuthService {
   get logging(): BehaviorSubject<boolean> {
     return this._logging;
   }
-
-  constructor(
-    private _httpClient: HttpClient
-  ) { }
+  
+  constructor(private _httpClient: HttpClient) { }
 
   register(user: User): Observable<UserResponse> {
     this._logging.next(true);

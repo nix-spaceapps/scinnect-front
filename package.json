@@ -1,5 +1,5 @@
 {
-  "name": "space-projects",
+  "name": "scinnect-front",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -18,8 +18,10 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@ngx-lite/input-tag": "^14.0.0",
     "cookie-though": "^1.5.0",
     "js-cookie": "^3.0.5",
+    "notyf": "^3.10.0",
     "particles.js": "^2.0.0",
     "primeng": "^16.4.1",
     "rxjs": "~7.8.0",
